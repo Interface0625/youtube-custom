@@ -10,12 +10,14 @@ var replaceThumbs = function(){
 				videoFrame = document.createElement('iframe');
 				videoFrame.width = container.clientWidth;
 				videoFrame.height = container.clientHeight;
+                videoFrame.id = 'player';
 				videoFrame.src = 'https://www.youtube.com/v/${videoId}?rel=0&autoplay=1'.replace('${videoId}', a.href.split('?v=')[1]);
 				clearChildren(container);
 				container.appendChild(videoFrame); 
-			}
+			};
 			clearChildren(container);
 			container.appendChild( image );
 		}
 	});
 };
+replaceThumbs();
